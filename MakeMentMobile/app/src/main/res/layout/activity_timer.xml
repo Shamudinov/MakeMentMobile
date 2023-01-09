@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimerActivity">
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="93dp"
+        android:fontFamily="@font/monstserrat"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/logo"
+        android:textAppearance="@style/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/time_view"
+        android:layout_width="262dp"
+        android:layout_height="100.3dp"
+        android:layout_marginTop="186.85dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="49dp"
+        android:textSize="48sp"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/finish_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="297dp"
+        android:background="@drawable/bg_primary"
+        android:onClick="onClickFinish"
+        android:text="@string/finish"
+        app:backgroundTint="#004FFF30"
+        app:backgroundTintMode="src_over"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/bg_primary"
+        android:onClick="onClickStart"
+        android:text="@string/start"
+        app:backgroundTint="#004FFF30"
+        app:backgroundTintMode="src_over"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/finish_button" />
+
+        <ListView
+        android:id="@+id/tasksList"
+        android:layout_width="0dp"
+        android:choiceMode="singleChoice"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/start_button"
+        android:layout_marginTop="420dp"
+        android:smoothScrollbar="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        </ListView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <include
+            android:id="@+id/app_bar_navigation"
+            layout="@layout/app_bar_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header_navigation"
+            app:menu="@menu/activity_navigation_drawer" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
